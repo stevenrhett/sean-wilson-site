@@ -9,6 +9,7 @@ const navigation = [
   { name: 'Home', href: '#home' },
   { name: 'Services', href: '#services' },
   { name: 'About', href: '#about' },
+  { name: 'Podcast', href: '#podcast' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -78,6 +79,19 @@ export function Header() {
               </motion.button>
             ))}
           </nav>
+
+          {/* CTA Button */}
+          <motion.button
+            onClick={() => scrollToSection('#contact')}
+            className="hidden md:block btn-primary"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get Started
+          </motion.button>
           <button
             className="md:hidden p-2 text-gray-800 hover:text-orange-500 transition-colors touch-target relative z-60"
             onClick={() => setIsOpen(!isOpen)}
@@ -105,6 +119,12 @@ export function Header() {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="btn-primary mt-4 text-center"
+              >
+                Get Started
+              </button>
             </div>
           </motion.div>
         )}

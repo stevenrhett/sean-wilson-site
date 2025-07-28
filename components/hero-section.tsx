@@ -64,7 +64,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16"
             >
               <motion.button
-//                 onClick={() => scrollToSection('#pricing')}
+                onClick={() => scrollToSection('#contact')}
                 className="btn-primary group flex items-center gap-3 text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -74,12 +74,12 @@ export function HeroSection() {
               </motion.button>
 
               <motion.button
-                onClick={() => scrollToSection('#services')}
+                onClick={() => scrollToSection('#podcast')}
                 className="btn-secondary group flex items-center gap-3 text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Watch Sean Speak
+                Listen to Podcast
                 <Target className="h-5 w-5" />
               </motion.button>
             </motion.div>
