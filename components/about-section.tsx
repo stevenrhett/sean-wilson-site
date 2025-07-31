@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Award, Users, Target, Heart, Building, Scale, Briefcase, BookOpen, Tv, GraduationCap } from 'lucide-react'
-import Image from 'next/image'
 
 export function AboutSection() {
   const [ref, inView] = useInView({
@@ -80,13 +79,10 @@ export function AboutSection() {
             className="relative max-w-md mx-auto lg:max-w-none"
           >
             <div className="relative h-80 sm:h-96 lg:h-[500px] w-full max-w-md lg:max-w-none mx-auto rounded-2xl overflow-hidden shadow-2xl">
-              <Image
+              <img
                 src="/assets/images/sw-headshot.jpeg"
                 alt="Sean Wilson - Senior Director at Dream.Org"
-                fill
-                className="object-cover object-center"
-                priority
-                sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 500px"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </motion.div>
