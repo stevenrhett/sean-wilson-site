@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Mic, Users, BookOpen, Target, Heart, TrendingUp, MessageCircle, Award } from 'lucide-react'
+import { Mic, Users, BookOpen, Target, Heart, TrendingUp, MessageCircle, Award, Play, Headphones, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 
 export function SpeakingSection() {
@@ -21,6 +21,10 @@ export function SpeakingSection() {
     { name: "Transformative Storytelling for Social Change", icon: MessageCircle },
     { name: "Leadership Through an Equity Lens", icon: Award }
   ]
+
+  const handlePodcastClick = () => {
+    window.open('https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN', '_blank')
+  }
 
   return (
     <section id="speaking" className="section-padding bg-white">
@@ -96,6 +100,115 @@ export function SpeakingSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Featured Podcast Interview Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white rounded-3xl p-8 lg:p-12"
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <Headphones className="w-4 h-4" />
+              Featured Interview
+            </div>
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6">
+              Podcast <span className="text-primary">Interview</span>
+            </h3>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Sean Wilson is the Organizing Director at Dream.Org. As someone with 17 years of lived experience
+              and direct involvement with the criminal legal system, Sean brings an advantage and insight into a
+              system he believes to be broken and in need of reform. We got into some of this and of course we
+              talked all things fatherhood.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Podcast Player & Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              {/* Podcast Player Card */}
+              <div id="podcast" className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 mb-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center">
+                    <Mic className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-1">Featured Podcast Interview</h4>
+                    <p className="text-gray-400">Listen to Sean's Story</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Listen to Sean share his powerful journey from incarceration to impact, discussing criminal justice reform, 
+                  leadership strategies, and the importance of lived experience in creating systemic change.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.button
+                    onClick={handlePodcastClick}
+                    className="flex items-center justify-center gap-2 bg-primary hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 flex-1"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Play className="w-5 h-5" />
+                    Listen on Spotify
+                  </motion.button>
+
+
+                </div>
+              </div>
+
+              {/* Feature */}
+              <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <h5 className="font-semibold mb-2">Personal Journey</h5>
+                <p className="text-sm text-gray-400">From incarceration to impact - a powerful story of transformation and leadership</p>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Interview Topics */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+
+
+              <div className="space-y-4">
+                <h5 className="text-xl font-bold">Interview Topics:</h5>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>17 years of lived experience with the criminal legal system</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Insights into systemic reform and justice transformation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Leadership development through lived experience</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Fatherhood, family, and community impact</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Building justice-centered organizations at Dream.Org</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

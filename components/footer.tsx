@@ -52,9 +52,7 @@ export function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">SW</span>
-                </div>
+
                 <div>
                   <div className="text-lg font-bold">Strategy by Sean Wilson</div>
                   <div className="text-sm text-gray-400">Leadership Rooted in Liberation</div>
@@ -116,26 +114,11 @@ export function Footer() {
 
             {/* Contact & Resources */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Connect</h3>
-              
+
               <div className="space-y-4 mb-8">
-                <Link
-                  href="mailto:sean@emancipatedstrategies.com"
-                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
-                >
-                  <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
-                  <span>sean@emancipatedstrategies.com</span>
-                </Link>
+
                 
-                <Link
-                  href="https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
-                >
-                  <ExternalLink className="w-5 h-5 group-hover:text-primary transition-colors" />
-                  <span>Podcast Interviews</span>
-                </Link>
+
               </div>
 
               {/* Newsletter Signup */}
@@ -145,7 +128,7 @@ export function Footer() {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-primary text-white placeholder-gray-400"
+                    className="flex-1 max-w-fit px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-primary text-white placeholder-gray-400"
                   />
                   <button className="bg-primary hover:bg-primary-600 px-4 py-2 rounded-r-lg transition-colors">
                     <Mail className="w-5 h-5" />
@@ -164,7 +147,8 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="text-center lg:text-left">
               <p className="text-gray-400">
-                © {currentYear} Strategy by Sean Wilson / Emancipated Strategies. All rights reserved.
+                © {currentYear} Strategy by Sean Wilson / Emancipated Strategies. All rights reserved.<br/>
+                <a href="https://www.stevenrhett.com">Build by Stevenrhett.com</a>
               </p>
             </div>
 

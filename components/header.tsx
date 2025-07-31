@@ -38,14 +38,6 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative"
-            >
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg lg:text-xl">SW</span>
-              </div>
-            </motion.div>
             <div className="hidden sm:block">
               <div className={`text-lg lg:text-xl font-bold transition-colors ${
                 scrolled ? 'text-gray-900' : 'text-white'

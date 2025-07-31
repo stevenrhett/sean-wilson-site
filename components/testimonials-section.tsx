@@ -68,28 +68,6 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 bg-primary rounded-2xl p-8 lg:p-12 text-white"
-        >
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">1000+</div>
-              <div className="text-primary-100">Leaders Empowered</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">50+</div>
-              <div className="text-primary-100">Organizations Served</div>
-            </div>
-            <div>
-              <div className="text-4xl lg:text-5xl font-bold mb-2">10+</div>
-              <div className="text-primary-100">Years of Impact</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -70,22 +70,7 @@ export function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Podcast Interviews</h3>
-              <p className="text-gray-600 mb-6">
-                Listen to Sean share insights on leadership, justice reform, and strategic change.
-              </p>
-              
-              <a 
-                href="https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-              >
-                <ExternalLink className="w-5 h-5" />
-                Listen on Spotify
-              </a>
-            </div>
+
 
             <div className="bg-gray-50 rounded-xl p-8">
               <h4 className="font-bold text-lg mb-4">Get in Touch</h4>
@@ -97,15 +82,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="bg-primary/5 rounded-xl p-6">
-              <h4 className="font-bold text-lg mb-3 text-primary">Ready to Get Started?</h4>
-              <p className="text-gray-700 mb-4">
-                Book a discovery call to explore how we can work together to advance your mission.
-              </p>
-              <button className="btn-primary">
-                Book Discovery Call
-              </button>
-            </div>
+
           </motion.div>
 
           {/* Right Column - Contact Form */}

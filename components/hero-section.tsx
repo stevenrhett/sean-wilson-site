@@ -69,10 +69,10 @@ export function HeroSection() {
               </button>
             </Link>
             
-            <Link href="#speaking">
+            <Link href="#podcast">
               <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center gap-2 text-lg">
                 <Play className="w-5 h-5" />
-                Watch Sean Speak
+                Listen to Sean Speak
               </button>
             </Link>
           </motion.div>
