@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Target, Users, Lightbulb, Heart } from 'lucide-react'
+import Image from 'next/image'
 
 export function WhoWeAreSection() {
   const [ref, inView] = useInView({
@@ -39,14 +40,12 @@ export function WhoWeAreSection() {
             className="relative"
           >
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Placeholder for team/meeting image */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <Users className="w-16 h-16 mx-auto mb-4" />
-                  <p className="font-semibold">Team Meeting</p>
-                  <p className="text-sm opacity-75">Collaborative Leadership</p>
-                </div>
-              </div>
+              <Image
+                src="/assets/images/sw-headshot.jpeg"
+                alt="Sean Wilson - Executive Coach"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
 
@@ -133,13 +132,17 @@ export function WhoWeAreSection() {
             className="relative"
           >
             <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
-              {/* Placeholder for business/consulting image */}
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                <div className="text-center text-gray-700">
-                  <Heart className="w-16 h-16 mx-auto mb-4" />
-                  <p className="font-semibold">Community Impact</p>
-                  <p className="text-sm opacity-75">Making a Difference</p>
-                </div>
+              <Image
+                src="/assets/images/sw-headshot.jpeg"
+                alt="Sean Wilson - Community Impact"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 text-white">
+                <Heart className="w-8 h-8 mb-2" />
+                <p className="font-semibold text-lg">Community Impact</p>
+                <p className="text-sm opacity-90">Making a Difference</p>
               </div>
             </div>
           </motion.div>

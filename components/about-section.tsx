@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Award, Users, Target, Heart } from 'lucide-react'
+import Image from 'next/image'
 
 export function AboutSection() {
   const [ref, inView] = useInView({
@@ -45,13 +46,13 @@ export function AboutSection() {
             className="relative"
           >
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Placeholder for professional photo */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-500 rounded-full mx-auto mb-4"></div>
-                  <p className="text-gray-600">Professional Photo</p>
-                </div>
-              </div>
+              <Image
+                src="/assets/images/sw-headshot.jpeg"
+                alt="Sean Wilson - Professional Headshot"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
 
@@ -62,7 +63,7 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="section-title mb-6">
-              ABOUT <span className="text-gradient">SEAN WILSON</span>,
+              ABOUT <span className="text-gradient">SEAN WILSON</span>, 
               CHIEF EXECUTIVE COACH
             </h2>
             

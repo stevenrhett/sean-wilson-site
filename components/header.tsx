@@ -51,12 +51,12 @@ export function Header() {
               className="relative"
             >
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg lg:text-xl">YC</span>
+                <span className="text-white font-bold text-lg lg:text-xl">SW</span>
               </div>
             </motion.div>
             <div className="hidden sm:block">
               <div className="text-lg lg:text-xl font-bold text-gray-900">
-                Your Company
+                Sean Wilson
               </div>
               <div className="text-xs lg:text-sm text-gray-600 -mt-1">
                 Executive Coaching

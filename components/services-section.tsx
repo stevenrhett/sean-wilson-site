@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Users, TrendingUp, Shield, MessageCircle, Target, Lightbulb } from 'lucide-react'
+import Image from 'next/image'
 
 export function ServicesSection() {
   const [ref, inView] = useInView({
@@ -107,13 +108,17 @@ export function ServicesSection() {
               {/* Image/Visual */}
               <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
-                  {/* Placeholder for service images */}
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <service.icon className="w-16 h-16 mx-auto mb-4" />
-                      <p className="font-semibold">{service.title}</p>
-                      <p className="text-sm opacity-75">Service Image</p>
-                    </div>
+                  <Image
+                    src="/assets/images/sw-headshot.jpeg"
+                    alt={`Sean Wilson - ${service.title}`}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Service overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <service.icon className="w-8 h-8 mb-2" />
+                    <p className="font-semibold text-lg">{service.title}</p>
                   </div>
                 </div>
               </div>

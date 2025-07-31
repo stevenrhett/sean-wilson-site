@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Quote, Star } from 'lucide-react'
+import Image from 'next/image'
 
 export function TestimonialsSection() {
   const [ref, inView] = useInView({
@@ -81,10 +82,13 @@ export function TestimonialsSection() {
               </p>
               
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span className="text-gray-600 font-semibold text-sm">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+                <div className="w-12 h-12 rounded-full overflow-hidden relative">
+                  <Image
+                    src="/assets/images/sw-headshot.jpeg"
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>

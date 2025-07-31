@@ -30,8 +30,8 @@ export function Footer() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@yourcompany.com',
-      href: 'mailto:info@yourcompany.com'
+      value: 'sean@seanwilsoncoaching.com',
+      href: 'mailto:sean@seanwilsoncoaching.com'
     },
     {
       icon: Phone,
@@ -75,10 +75,10 @@ export function Footer() {
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
                 <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">YC</span>
+                  <span className="text-white font-bold text-lg">SW</span>
                 </div>
                 <div>
-                  <div className="text-lg font-bold">Your Company</div>
+                  <div className="text-lg font-bold">Sean Wilson</div>
                   <div className="text-sm text-gray-400">Executive Coaching</div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="text-center lg:text-left">
               <p className="text-gray-400">
-                © {currentYear} Your Company. All rights reserved.
+                © {currentYear} Sean Wilson Executive Coaching. All rights reserved.
               </p>
             </div>
 
