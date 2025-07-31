@@ -13,11 +13,12 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/60 z-10" />
         <div className="w-full h-full relative">
           <Image
-            src="/assets/images/sw-headshot.jpeg"
+            src="/assets/images/sw-3.jpg"
             alt="Sean Wilson leading a training"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
+            sizes="100vw"
           />
         </div>
       </div>
@@ -69,10 +70,10 @@ export function HeroSection() {
               </button>
             </Link>
             
-            <Link href="#podcast">
+            <Link href="#speaking">
               <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center gap-2 text-lg">
                 <Play className="w-5 h-5" />
-                Listen to Sean Speak
+                Watch Sean Speak
               </button>
             </Link>
           </motion.div>

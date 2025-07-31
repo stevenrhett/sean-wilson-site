@@ -83,14 +83,15 @@ export function SpeakingSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative max-w-lg mx-auto lg:max-w-none"
           >
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-80 sm:h-96 lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/assets/images/sw-headshot.jpeg"
+                src="/assets/images/sw-8.jpg"
                 alt="Sean Wilson Speaking"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
@@ -132,7 +133,7 @@ export function SpeakingSection() {
               transition={{ duration: 0.8, delay: 1 }}
             >
               {/* Podcast Player Card */}
-              <div id="podcast" className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 mb-8">
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 mb-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center">
                     <Mic className="w-8 h-8 text-white" />
@@ -158,8 +159,15 @@ export function SpeakingSection() {
                     <Play className="w-5 h-5" />
                     Listen on Spotify
                   </motion.button>
-
-
+                  <motion.button
+                    onClick={handlePodcastClick}
+                    className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Full Interview
+                  </motion.button>
                 </div>
               </div>
 
@@ -179,7 +187,20 @@ export function SpeakingSection() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-
+              <div className="relative h-80 lg:h-96 w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-xl mb-6">
+                <Image
+                  src="/assets/images/sw-9.jpg"
+                  alt="Sean Wilson Podcast Interview"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 500px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <Headphones className="w-8 h-8 mb-2" />
+                  <p className="font-semibold text-lg">Featured Interview</p>
+                </div>
+              </div>
 
               <div className="space-y-4">
                 <h5 className="text-xl font-bold">Interview Topics:</h5>
