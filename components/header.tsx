@@ -20,17 +20,9 @@ export function Header() {
 
   const navigation = [
     { name: 'Home', href: '#' },
-    {
-      name: 'Services',
-      href: '#services',
-      dropdown: [
-        { name: 'Executive Coaching', href: '#services' },
-        { name: 'Organizational Development', href: '#services' },
-        { name: 'Crisis Management', href: '#services' },
-        { name: 'Strategic Communication', href: '#services' },
-      ]
-    },
+    { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
+    { name: 'Speaking', href: '#speaking' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -55,11 +47,15 @@ export function Header() {
               </div>
             </motion.div>
             <div className="hidden sm:block">
-              <div className="text-lg lg:text-xl font-bold text-gray-900">
-                Sean Wilson
+              <div className={`text-lg lg:text-xl font-bold transition-colors ${
+                scrolled ? 'text-gray-900' : 'text-white'
+              }`}>
+                Strategy by Sean Wilson
               </div>
-              <div className="text-xs lg:text-sm text-gray-600 -mt-1">
-                Executive Coaching
+              <div className={`text-xs lg:text-sm -mt-1 transition-colors ${
+                scrolled ? 'text-gray-600' : 'text-gray-300'
+              }`}>
+                Leadership Rooted in Liberation
               </div>
             </div>
           </Link>
@@ -67,45 +63,17 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div
+              <Link
                 key={item.name}
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(item.dropdown ? item.name : null)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                href={item.href}
+                className={`font-semibold transition-colors ${
+                  scrolled 
+                    ? 'text-gray-900 hover:text-primary' 
+                    : 'text-white hover:text-primary'
+                }`}
               >
-                <Link
-                  href={item.href}
-                  className={`flex items-center gap-1 font-semibold transition-colors ${
-                    scrolled ? 'text-gray-900 hover:text-primary' : 'text-white hover:text-primary'
-                  }`}
-                >
-                  {item.name}
-                  {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                </Link>
-
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {item.dropdown && activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
-                    >
-                      {item.dropdown.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                {item.name}
+              </Link>
             ))}
           </nav>
 
@@ -113,7 +81,7 @@ export function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="#contact">
               <button className="bg-primary hover:bg-primary-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Get Started
+                Book Consultation
               </button>
             </Link>
           </div>
@@ -121,12 +89,18 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu-button"
+            className={`lg:hidden p-2 rounded-lg transition-colors mobile-menu-button ${
+              scrolled ? 'hover:bg-gray-100' : 'hover:bg-white/10'
+            }`}
           >
             {isOpen ? (
-              <X className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+              <X className={`w-6 h-6 transition-colors ${
+                scrolled ? 'text-gray-900' : 'text-white'
+              }`} />
             ) : (
-              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+              <Menu className={`w-6 h-6 transition-colors ${
+                scrolled ? 'text-gray-900' : 'text-white'
+              }`} />
             )}
           </button>
         </div>
@@ -143,29 +117,14 @@ export function Header() {
             >
               <div className="py-4 space-y-2">
                 {navigation.map((item) => (
-                  <div key={item.name}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-gray-900 hover:text-primary hover:bg-gray-50 font-semibold transition-colors rounded-lg mx-2"
-                    >
-                      {item.name}
-                    </Link>
-                    {item.dropdown && (
-                      <div className="ml-4 space-y-1">
-                        {item.dropdown.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            onClick={() => setIsOpen(false)}
-                            className="block px-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors rounded-lg"
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-4 py-3 text-gray-900 hover:text-primary hover:bg-gray-50 font-semibold transition-colors rounded-lg mx-2"
+                  >
+                    {item.name}
+                  </Link>
                 ))}
                 <div className="px-4 pt-4">
                   <Link href="#contact">
@@ -173,7 +132,7 @@ export function Header() {
                       onClick={() => setIsOpen(false)}
                       className="w-full bg-primary hover:bg-primary-600 text-white font-semibold py-3 px-4 rounded-lg transition-all"
                     >
-                      Get Started
+                      Book Consultation
                     </button>
                   </Link>
                 </div>

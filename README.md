@@ -1,31 +1,88 @@
-# Executive Coaching & Leadership Development Website
+# Strategy by Sean Wilson - Leadership Rooted in Liberation
 
-This Next.js website has been redesigned to focus on executive coaching and leadership development services, inspired by professional consulting firms like GEMtrainers and Darris Group.
+A Next.js website showcasing Sean Wilson's work in justice-centered leadership development, criminal justice reform, and strategic social change consulting.
 
-## 🎯 Key Features
+## 🎯 Website Overview
 
-### Design & Layout
-- **Professional Hero Section**: Full-screen hero with powerful messaging about executive coaching
-- **About Section**: Personal profile section showcasing expertise and achievements
-- **Services Section**: Comprehensive overview of four core services
-- **Who We Are Section**: Vision, values, and community impact focus
-- **Testimonials & Client Logos**: Social proof and credibility building
-- **Contact Form**: Professional contact form with service selection
-- **Responsive Design**: Mobile-first approach with smooth animations
+This website presents Sean Wilson's story and services, focusing on:
+- **Leadership Development & Coaching**: Empowering purpose-driven leaders
+- **Criminal Justice Campaigns & Policy Consulting**: Transformative strategies and advocacy
+- **Strategic Advising for Social Change**: Strengthening impact and organizational capacity
 
-### Core Services Highlighted
-1. **Executive Coaching** - "Leadership Is a Lonely Place...or Is It?"
-2. **Organizational Development** - "We Help Sculpt Organizational Excellence"
-3. **Crisis Management** - "Are You in Trouble? We Can Help."
-4. **Strategic Communication** - "We Teach You What Others Want to Keep Secret"
+## 🚀 Key Sections
+
+### **Hero Section**
+- "Strategy by Sean Wilson" branding
+- "Leadership Rooted in Liberation" tagline
+- Professional photo of Sean leading training
+- Call-to-action buttons: "Book a Consultation" and "Watch Sean Speak"
+
+### **What We Do**
+- Three core service areas with detailed descriptions
+- Professional icons and clean layout
+- Focus on justice-centered solutions
+
+### **About Me**
+- Personal quote: "I don't just speak about change. I build it with the people most impacted at the center."
+- Sean's background from incarceration to impact
+- Founder of Emancipated Strategies, Senior Director at Dream.Org
+- "Read Full Bio" call-to-action
+
+### **Speaking & Training** 
+- Comprehensive list of speaking services:
+  - Keynote Speaking
+  - Panel Moderator & Facilitator
+  - Executive Leadership Workshops
+  - Advocacy & Organizing Trainings
+  - Building a Life of Purpose After Incarceration
+  - Winning Campaigns that Shift Power
+  - Transformative Storytelling for Social Change
+  - Leadership Through an Equity Lens
+- "Request Booking Info" button
+
+### **Impact & Testimonials**
+- Client testimonials and impact stories
+- Statistics showcasing reach and effectiveness
+- Social proof from organizations served
+
+### **Let's Build Together**
+- Contact form with fields:
+  - Name
+  - Email  
+  - Organization
+  - Inquiry Type (Consulting, Speaking, Coaching, Media)
+  - Message
+- Podcast interviews section with Spotify playlist link
+- Discovery call booking option
+
+## 🔧 Technical Stack
+
+- **Framework**: Next.js 14 with TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Analytics**: Vercel Analytics
+- **Font**: Inter & Space Grotesk
+
+## 📱 Features
+
+- **Responsive Design**: Mobile-first approach
+- **Smooth Animations**: Scroll-triggered animations using Intersection Observer
+- **Dynamic Header**: Text color changes based on scroll position
+- **Professional Photography**: Sean's headshot used throughout
+- **Contact Integration**: Form handling for inquiries
+- **External Links**: Direct link to Spotify podcast playlist
+
+## 🎨 Design Elements
+
+- **Color Scheme**: Orange primary (#ff4c00) with professional grays
+- **Typography**: Modern, clean fonts with strong hierarchy
+- **Photography**: Professional headshots and training imagery
+- **Layout**: Clean, professional consulting firm aesthetic
+- **Brand Voice**: Justice-centered, empowering, transformational
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
 ```bash
 # Install dependencies
 npm install
@@ -40,114 +97,40 @@ npm run build
 npm start
 ```
 
-## 📝 Customization Guide
+## 📝 Content Updates
 
-### 1. Personal Information
-Update the following files with your actual information:
+To update the website content:
 
-**`components/about-section.tsx`**
-- Replace placeholder name and company
-- Add your professional photo
-- Update biography and achievements
-- Customize recognition and awards
+1. **Hero Section**: Edit `components/hero-section.tsx`
+2. **Services**: Update `components/services-section.tsx`
+3. **About**: Modify `components/about-section.tsx`
+4. **Speaking**: Edit `components/speaking-section.tsx`
+5. **Contact**: Update `components/contact-section.tsx`
+6. **SEO**: Update metadata in `app/layout.tsx`
 
-**`components/hero-section.tsx`**
-- Update hero messaging
-- Replace company tagline
-- Customize call-to-action buttons
+## 🔗 External Links
 
-### 2. Contact Information
-**`components/contact-section.tsx`** and **`components/footer.tsx`**
-- Update email address
-- Add phone number
-- Set location/address
-- Configure social media links
+- **Spotify Playlist**: https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN
+- **Email**: sean@emancipatedstrategies.com
 
-### 3. Services Content
-**`components/services-section.tsx`**
-- Customize service descriptions
-- Update pricing or methodologies
-- Add specific case studies or examples
+## 📈 Performance Features
 
-### 4. Images & Media
-Replace placeholder content in:
-- Hero background image
-- Professional headshots
-- Service images
-- Client logos
-- Team photos
-
-### 5. Brand Colors & Styling
-**`tailwind.config.js`** and **`app/globals.css`**
-- Update primary brand color (currently orange `#ff4c00`)
-- Customize typography
-- Adjust spacing and layout
-
-## 🎨 Design Inspiration
-
-This design draws inspiration from:
-- **GEMtrainers LLC**: Executive coaching focus and messaging
-- **Darris Group**: Professional consulting layout and services structure
-- **Community Impact**: Social justice and community-centered approach
-
-## 📱 Responsive Design
-
-The website is built mobile-first with breakpoints:
-- Mobile: < 640px
-- Tablet: 640px - 1024px  
-- Desktop: > 1024px
-
-## 🔧 Technical Stack
-
-- **Framework**: Next.js 14
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Forms**: React Hook Form + Zod validation
-- **Analytics**: Vercel Analytics
-
-## 📊 Performance Features
-
-- **Optimized Images**: Next.js Image component
+- **Image Optimization**: Next.js Image component
 - **Font Optimization**: Google Fonts with display swap
-- **Smooth Animations**: Intersection Observer for scroll-triggered animations
-- **SEO Optimized**: Meta tags, Open Graph, and structured data
-- **Accessibility**: ARIA labels, keyboard navigation, high contrast support
+- **Code Splitting**: Automatic with Next.js
+- **SEO Optimization**: Complete meta tags and structured data
+- **Accessibility**: ARIA labels, keyboard navigation, high contrast
 
-## 🛠️ Maintenance & Updates
+## 🎯 Call-to-Actions
 
-### Regular Updates Needed:
-1. **Testimonials**: Add new client feedback
-2. **Client Logos**: Update with recent clients
-3. **Services**: Expand or refine service offerings
-4. **Blog/Content**: Add thought leadership content
-5. **Contact Info**: Keep all contact details current
-
-### SEO Considerations:
-- Update meta descriptions regularly
-- Add blog/insights section for content marketing
-- Optimize images with alt text
-- Monitor page load speeds
-- Keep content fresh and relevant
-
-## 📞 Support & Customization
-
-For additional customization or technical support:
-1. Review component documentation
-2. Check Tailwind CSS documentation for styling
-3. Refer to Next.js documentation for framework features
-4. Consider adding a CMS for easier content management
-
-## 🌟 Future Enhancements
-
-Consider adding:
-- **Blog/Insights Section**: Thought leadership content
-- **Case Studies**: Detailed client success stories
-- **Online Scheduling**: Calendar integration for consultations
-- **Resource Library**: Downloadable guides and tools
-- **Video Content**: Speaking engagements and testimonials
-- **Newsletter Integration**: Email marketing capabilities
+Primary actions throughout the site:
+- Book a Consultation
+- Watch Sean Speak
+- Request Booking Info
+- Book Discovery Call
+- Read Full Bio
+- Listen on Spotify
 
 ---
 
-**Note**: Remember to replace all placeholder content (company names, contact information, images, etc.) with your actual business information before going live.
+**Mission**: Empowering people, campaigns, and institutions to build justice-centered solutions through leadership rooted in liberation.

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react'
+import { Mail, ExternalLink, Linkedin, Twitter, Instagram } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,41 +11,19 @@ export function Footer() {
       { name: 'Home', href: '#' },
       { name: 'Services', href: '#services' },
       { name: 'About', href: '#about' },
+      { name: 'Speaking', href: '#speaking' },
       { name: 'Contact', href: '#contact' },
     ],
     services: [
-      { name: 'Executive Coaching', href: '#services' },
-      { name: 'Organizational Development', href: '#services' },
-      { name: 'Crisis Management', href: '#services' },
-      { name: 'Strategic Communication', href: '#services' },
+      { name: 'Leadership Development & Coaching', href: '#services' },
+      { name: 'Criminal Justice Campaigns', href: '#services' },
+      { name: 'Strategic Advising for Social Change', href: '#services' },
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
     ]
   }
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'sean@seanwilsoncoaching.com',
-      href: 'mailto:sean@seanwilsoncoaching.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '(555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      label: 'Office',
-      value: 'Your City, State',
-      href: '#'
-    }
-  ]
 
   const socialLinks = [
     {
@@ -78,14 +56,13 @@ export function Footer() {
                   <span className="text-white font-bold text-lg">SW</span>
                 </div>
                 <div>
-                  <div className="text-lg font-bold">Sean Wilson</div>
-                  <div className="text-sm text-gray-400">Executive Coaching</div>
+                  <div className="text-lg font-bold">Strategy by Sean Wilson</div>
+                  <div className="text-sm text-gray-400">Leadership Rooted in Liberation</div>
                 </div>
               </div>
               
               <p className="text-gray-400 leading-relaxed mb-6">
-                Transforming leaders and organizations through innovative coaching, 
-                strategic consulting, and community-centered solutions.
+                Empowering people, campaigns, and institutions to build justice-centered solutions.
               </p>
 
               {/* Social Links */}
@@ -128,7 +105,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {item.name}
                     </Link>
@@ -137,25 +114,32 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact & Resources */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Contact</h3>
-              <ul className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <li key={index}>
-                    <Link
-                      href={info.href}
-                      className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
-                    >
-                      <info.icon className="w-5 h-5 group-hover:text-primary transition-colors" />
-                      <span>{info.value}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-lg font-semibold mb-6">Connect</h3>
+              
+              <div className="space-y-4 mb-8">
+                <Link
+                  href="mailto:sean@emancipatedstrategies.com"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                >
+                  <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
+                  <span>sean@emancipatedstrategies.com</span>
+                </Link>
+                
+                <Link
+                  href="https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                >
+                  <ExternalLink className="w-5 h-5 group-hover:text-primary transition-colors" />
+                  <span>Podcast Interviews</span>
+                </Link>
+              </div>
 
               {/* Newsletter Signup */}
-              <div className="mt-8">
+              <div>
                 <h4 className="font-semibold mb-4">Stay Updated</h4>
                 <div className="flex">
                   <input
@@ -168,7 +152,7 @@ export function Footer() {
                   </button>
                 </div>
                 <p className="text-xs text-gray-400 mt-2">
-                  Get insights on leadership and organizational development.
+                  Get insights on justice-centered leadership and strategy.
                 </p>
               </div>
             </div>
@@ -180,7 +164,7 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="text-center lg:text-left">
               <p className="text-gray-400">
-                © {currentYear} Sean Wilson Executive Coaching. All rights reserved.
+                © {currentYear} Strategy by Sean Wilson / Emancipated Strategies. All rights reserved.
               </p>
             </div>
 

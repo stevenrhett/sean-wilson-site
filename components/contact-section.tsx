@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, Check } from 'lucide-react'
+import { Mail, Send, Check, ExternalLink } from 'lucide-react'
 
 export function ContactSection() {
   const [ref, inView] = useInView({
@@ -12,11 +12,11 @@ export function ContactSection() {
   })
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
-    message: '',
-    service: ''
+    organization: '',
+    inquiryType: '',
+    message: ''
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -35,39 +35,15 @@ export function ContactSection() {
     setTimeout(() => {
       setIsSubmitted(true)
       setIsSubmitting(false)
-      setFormData({ firstName: '', lastName: '', email: '', message: '', service: '' })
+      setFormData({ name: '', email: '', organization: '', inquiryType: '', message: '' })
     }, 1000)
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'info@yourcompany.com',
-      href: 'mailto:info@yourcompany.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '(555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Your City, State',
-      href: '#'
-    }
-  ]
-
-  const services = [
-    'Executive Coaching',
-    'Organizational Development',
-    'Crisis Management',
-    'Strategic Communication',
-    'Leadership Development',
-    'Speaking Engagement',
-    'Other'
+  const inquiryTypes = [
+    'Consulting',
+    'Speaking',
+    'Coaching',
+    'Media'
   ]
 
   return (
@@ -79,16 +55,15 @@ export function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title mb-6">Get in Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Established to transform leaders and organizations. We believe that 'people closest 
-            to the problem are closest to the solution,' which has led to a diverse, experienced, 
-            and inclusive approach that mirrors our values. Simply put, we become your team.
+          <h2 className="section-title mb-6">Let's Build Together</h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Ready to strengthen your leadership, advance justice, or deepen your strategy? 
+            Fill out the form or book a discovery call to explore how Emancipated Strategies can elevate your work.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Information */}
+          {/* Left Column - Podcast & Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -96,71 +71,44 @@ export function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Start a Conversation</h3>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                We're here to help you navigate your leadership journey and organizational 
-                challenges. Reach out to discuss how we can support your goals and create 
-                lasting impact together.
+              <h3 className="text-2xl font-bold mb-6">Podcast Interviews</h3>
+              <p className="text-gray-600 mb-6">
+                Listen to Sean share insights on leadership, justice reform, and strategic change.
               </p>
+              
+              <a 
+                href="https://open.spotify.com/playlist/6U2rPlZtYTMmjiKVl2jjL5?si=8Dd-75-iTvqEWTE_46XlqA&pi=XRh6iqf_RG-TN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Listen on Spotify
+              </a>
             </div>
 
-            {/* Contact Details */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={index}
-                  href={info.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors group"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <info.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{info.label}</p>
-                    <p className="text-gray-600">{info.value}</p>
-                  </div>
-                </motion.a>
-              ))}
+            <div className="bg-gray-50 rounded-xl p-8">
+              <h4 className="font-bold text-lg mb-4">Get in Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <span className="text-gray-700">sean@emancipatedstrategies.com</span>
+                </div>
+              </div>
             </div>
 
-            {/* Company Philosophy */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-gray-50 rounded-xl p-6 mt-8"
-            >
-              <h4 className="font-bold text-lg mb-3">Our Philosophy</h4>
-              <p className="text-gray-600 italic">
-                "We believe that people closest to the problem are closest to the solution. 
-                This principle guides our collaborative approach to leadership development 
-                and organizational transformation."
+            <div className="bg-primary/5 rounded-xl p-6">
+              <h4 className="font-bold text-lg mb-3 text-primary">Ready to Get Started?</h4>
+              <p className="text-gray-700 mb-4">
+                Book a discovery call to explore how we can work together to advance your mission.
               </p>
-            </motion.div>
-
-            {/* Social Links Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex gap-4"
-            >
-              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
-                <span className="text-sm font-bold">Li</span>
-              </div>
-              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
-                <span className="text-sm font-bold">Tw</span>
-              </div>
-              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
-                <span className="text-sm font-bold">Ig</span>
-              </div>
-            </motion.div>
+              <button className="btn-primary">
+                Book Discovery Call
+              </button>
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right Column - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -187,37 +135,20 @@ export function ContactSection() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900 mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="Your first name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      placeholder="Your last name"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    placeholder="Your full name"
+                  />
                 </div>
 
                 <div>
@@ -237,19 +168,35 @@ export function ContactSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-900 mb-2">
-                    Service of Interest
+                  <label htmlFor="organization" className="block text-sm font-semibold text-gray-900 mb-2">
+                    Organization
                   </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
+                  <input
+                    type="text"
+                    id="organization"
+                    name="organization"
+                    value={formData.organization}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    placeholder="Your organization name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="inquiryType" className="block text-sm font-semibold text-gray-900 mb-2">
+                    Inquiry Type *
+                  </label>
+                  <select
+                    id="inquiryType"
+                    name="inquiryType"
+                    value={formData.inquiryType}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   >
-                    <option value="">Choose a service...</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service}>{service}</option>
+                    <option value="">Select inquiry type...</option>
+                    {inquiryTypes.map((type, index) => (
+                      <option key={index} value={type}>{type}</option>
                     ))}
                   </select>
                 </div>
