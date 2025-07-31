@@ -72,7 +72,7 @@ export function ProfessionalAboutSection() {
                 <div className="relative bg-white p-4 rounded shadow-2xl">
                   <div className="relative overflow-hidden rounded-2xl">
                     <Image
-                      src="/assets/images/team/sw-headshot.jpeg"
+                      src="/images/sw-headshot.jpeg"
                       alt="Sean Wilson - Founder & Strategic Business Consultant"
                       width={600}
                       height={750}
@@ -164,7 +164,8 @@ export function ProfessionalAboutSection() {
 
 
 
-                  <strong className="text-orange-600">  over 300 advocates </strong> in organizing and leadership development, bringing about policy and
+                  <strong className="text-orange-600">  over 300 advocates </strong>
+                  in organizing and leadership development, bringing about policy and
                                                                                                     legislative change at the local and state levels. As someone who is system-impacted,
                                                                                                     Sean brings an advantage and insight into a system he believes is in need of reform by
                                                                                                     investing in the leadership of those most proximate to the issue and problem.

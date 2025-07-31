@@ -1,149 +1,100 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Target, Rocket } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowRight, ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 
 export function HeroSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-[#ff4c00] to-[#ff9900] rounded mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-yellow-300 rounded mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-red-300 rounded mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/60 z-10" />
+        <div className="w-full h-full bg-gray-900 flex items-center justify-center">
+          {/* Placeholder for hero image - you can replace with actual image */}
+          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black opacity-80" />
+        </div>
       </div>
 
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
-
-          {/* Left Column - Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
-          >
-
-
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="hero-text mb-8"
-            >
-              Leadership
-              <span className="block text-gradient">That</span>
-              Liberates
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed"
-            >
-             Empowering people, campaigns, and institutions to
-              <strong className="text-orange-500"> build </strong>justice-centered solutions
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16"
-            >
-              <motion.button
-                onClick={() => scrollToSection('#contact')}
-                className="btn-primary group flex items-center gap-3 text-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Book a Consultation
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
-              <motion.button
-                onClick={() => scrollToSection('#podcast')}
-                className="btn-secondary group flex items-center gap-3 text-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Listen to Podcast
-                <Target className="h-5 w-5" />
-              </motion.button>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Sean Wilson Photo */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              {/* Background decoration */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-orange-400 to-yellow-400 rounded blur-xl opacity-20"></div>
-
-              {/* Image container */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative bg-white rounded shadow-2xl overflow-hidden max-w-4xl mx-auto"
-              >
-                <Image
-                  src="/assets/images/sean-wilson.jpg"
-                  alt="Sean Wilson - ACLU advocate and leadership strategist"
-                  width={800}
-                  height={1000}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-
-                {/* Overlay with quote or credentials */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-10">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1 }}
-                    className="text-white"
-                  >
-                    <h3 className="hidden font-bold text-3xl mb-3">Sean Wilson</h3>
-                    <p className="hidden text-xl opacity-95">ACLU Advocate & Strategic Leader</p>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-
-
-
-        {/* Scroll Indicator */}
+      <div className="relative z-20 container-custom text-center text-white">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
         >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-gray-400 rounded flex justify-center"
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight"
           >
-            <div className="w-1 h-3 bg-gray-400 rounded mt-2"></div>
+            EXECUTIVE COACHING
+          </motion.h1>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-gray-200"
+          >
+            Leadership Is a Lonely Place...or Is It?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            We pioneer transformative journeys for leaders through unrivaled executive 
+            coaching expertise. Committed to cultivating visionary leadership, our seasoned 
+            coaches provide personalized guidance transcending conventional boundaries.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Link href="#contact">
+              <button className="bg-primary hover:bg-primary-600 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                Get Started Today
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+            
+            <Link href="#about">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300">
+                Learn More
+              </button>
+            </Link>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mt-16"
+          >
+            <p className="text-sm text-gray-400 mb-4">Scroll to explore</p>
+            <ChevronDown className="w-6 h-6 mx-auto animate-bounce text-gray-400" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Quote overlay inspired by the designs */}
+      <div className="absolute bottom-20 right-8 z-20 hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="bg-white/10 backdrop-blur-lg p-6 rounded-xl max-w-sm"
+        >
+          <p className="text-white font-light italic">
+            "We don't just draw you a roadmap, we take the journey with you."
+          </p>
         </motion.div>
       </div>
     </section>

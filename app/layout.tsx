@@ -16,31 +16,32 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Strategy - Bold Business Solutions That Drive Results',
-  description: 'Transform your business with our bold Strategy, cutting-edge solutions, and proven methodologies. Get results that matter.',
+  title: 'Your Company - Executive Coaching & Leadership Development',
+  description: 'Transform your leadership journey with our comprehensive executive coaching, organizational development, and strategic consulting services. Personalized guidance that transcends conventional boundaries.',
   keywords: [
-    'business strategy',
-    'consulting',
-    'growth strategy',
-    'business transformation',
-    'strategic planning',
-    'business solutions',
-    'bold Strategy',
-    'results-driven',
-    'business consulting'
+    'executive coaching',
+    'leadership development',
+    'organizational development',
+    'crisis management',
+    'strategic communication',
+    'business consulting',
+    'leadership training',
+    'community-centered solutions',
+    'transformational leadership',
+    'nonprofit consulting'
   ],
-  authors: [{ name: 'Strategy Team' }],
-  creator: 'Strategy',
-  publisher: 'Strategy',
-  metadataBase: new URL('https://Strategy.vercel.app'),
+  authors: [{ name: 'Your Company' }],
+  creator: 'Your Company',
+  publisher: 'Your Company',
+  metadataBase: new URL('https://yourcompany.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Strategy - Bold Business Solutions',
-    description: 'Transform your business with our bold Strategy and cutting-edge solutions.',
-    url: 'https://Strategy.vercel.app',
-    siteName: 'Strategy',
+    title: 'Your Company - Executive Coaching & Leadership Development',
+    description: 'Transform your leadership journey with our comprehensive executive coaching and strategic consulting services.',
+    url: 'https://yourcompany.vercel.app',
+    siteName: 'Your Company',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -48,14 +49,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Strategy - Bold Business Solutions',
+        alt: 'Your Company - Executive Coaching & Leadership Development',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Strategy - Bold Business Solutions',
-    description: 'Transform your business with our bold Strategy and cutting-edge solutions.',
+    title: 'Your Company - Executive Coaching & Leadership Development',
+    description: 'Transform your leadership journey with our comprehensive executive coaching and strategic consulting services.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -77,7 +78,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#ff6b35" />
+        <meta name="theme-color" content="#ff4c00" />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-bold-pattern`}>
         {children}
