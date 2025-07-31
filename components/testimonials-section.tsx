@@ -16,19 +16,16 @@ export function TestimonialsSection() {
       content: "Sean's leadership development work has transformed how we approach justice-centered organizing. His insights are invaluable.",
       author: "Community Leader",
       organization: "National Justice Organization",
-      image: "/assets/images/sw-2.jpg"
     },
     {
       content: "From incarceration to impact - Sean's story and strategy work demonstrates the power of lived experience in creating change.",
       author: "Policy Director",
       organization: "Criminal Justice Reform Coalition",
-      image: "/assets/images/sw-6.jpg"
     },
     {
       content: "Sean doesn't just speak about transformation - he embodies it. His coaching has strengthened our entire leadership team.",
       author: "Executive Director",
       organization: "Social Change Institute",
-      image: "/assets/images/sw-4.jpg"
     }
   ]
 
@@ -64,17 +61,7 @@ export function TestimonialsSection() {
                 "{testimonial.content}"
               </p>
               
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative flex-shrink-0">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    fill
-                    className="object-cover object-center"
-                    sizes="48px"
-                  />
-                </div>
-                <div>
+              <div className="flex items-center gap-4"> <div>
                   <h4 className="font-semibold text-gray-900">{testimonial.author}</h4>
                   <p className="text-gray-600 text-sm">{testimonial.organization}</p>
                 </div>

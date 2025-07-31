@@ -16,7 +16,7 @@ export function ServicesSection() {
       title: "Leadership Development & Coaching",
       description: "Empowering purpose-driven leaders.",
       icon: Target,
-      image: "/assets/images/sw-7.jpg"
+      image: "/assets/images/sw-8.jpg"
     },
     {
       title: "Criminal Justice Campaigns & Policy Consulting", 
@@ -73,12 +73,12 @@ export function ServicesSection() {
 
               {/* Image */}
               <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                <div className="relative h-80 lg:h-96 w-full max-w-lg mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative h-80 lg:h-96 w-full max-w-md mx-auto lg:max-w-none rounded overflow-hidden shadow-xl">
                   <Image
                     src={service.image}
                     alt={`Sean Wilson - ${service.title}`}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

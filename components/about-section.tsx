@@ -81,7 +81,7 @@ export function AboutSection() {
           >
             <div className="relative h-80 sm:h-96 lg:h-[500px] w-full max-w-md lg:max-w-none mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/assets/images/bw-sw-headshot.jpeg"
+                src="/assets/images/sw-headshot.jpeg"
                 alt="Sean Wilson - Senior Director at Dream.Org"
                 fill
                 className="object-cover object-center"

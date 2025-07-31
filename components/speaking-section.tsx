@@ -189,7 +189,7 @@ export function SpeakingSection() {
             >
               <div className="relative h-80 lg:h-96 w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-xl mb-6">
                 <Image
-                  src="/assets/images/sw-9.jpg"
+                  src="/assets/images/sw-1.jpg"
                   alt="Sean Wilson Podcast Interview"
                   fill
                   className="object-cover object-center"
